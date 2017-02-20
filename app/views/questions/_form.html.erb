@@ -1,0 +1,12 @@
+<%= form_for @question do |f| %>
+  <%= f.label :firstoption %>
+  <%= f.text_field :firstoption %>
+
+  <%= f.label :secondoption %>
+  <%= f.text_field :secondoption %>
+
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+
+  <%= f.submit "Save", class: "btn" %>
+<% end %>
