@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   def index
     @questions = Question.all
+    @question = Question.new
   end
 
   def new
@@ -11,25 +12,13 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     if @question.save
       flash[:notice] = "Your rather has been saved!"
-      redirect_to questions_path
+      respond_to do |format|
+        format.html {redirect_to questions_path}
+        format.js
+      end
     else
       flash[:alert] = "Oops!"
       redirect_to new_question_path
-    end
-  end
-
-  def edit
-    @question = Question.find(params[:id])
-  end
-
-  def update
-    @question = Question.find(params[:id])
-    if @question.update(question_params)
-      flash[:notice] = "Changes saved!"
-      redirect_to questions_path
-    else
-      flash[:alert] = "Oops!"
-      redirect_to edit_question
     end
   end
 

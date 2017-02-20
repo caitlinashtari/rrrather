@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content">
+        <div class="row">
+          <div class="col s12 titleRow">
+            <span class="card-title"><%= question.author %></span>
+            <div class="card small col s6">
+              <p><%= question.firstoption %></p>
+            </div>
+            <div class="card small col s6">
+              <p><%=  question.secondoption %></p>
+            </div>
+          </div>
+          <!-- <div class="col s6">
+            <p>comments</p>
+          </div> -->
+        </div>
+      </div>
+      <%= link_to "Delete", question_path(question),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %>
+    </div>
+  </div>
+</div>
