@@ -1,12 +1,12 @@
 <%= form_for(@question, remote: true) do |f| %>
   <%= f.label :firstoption %>
-  <%= f.text_field :firstoption %>
+  <%= f.text_field :firstoption, class: "form_firstoption" %>
 
   <%= f.label :secondoption %>
-  <%= f.text_field :secondoption %>
+  <%= f.text_field :secondoption, class: "form_secondoption" %>
 
   <%= f.label :author %>
-  <%= f.text_field :author %>
+  <%= f.text_field :author, class: "form_author" %>
 
   <%= f.submit "Save", class: "btn" %>
 <% end %>
