@@ -1,14 +1,14 @@
 <div class="row">
   <div class="col s12">
-    <div class="card">
+    <div class="card" id="<%= question.id %>">
       <div class="card-content">
         <div class="row">
           <div class="col s12 titleRow">
             <span class="card-title"><%= question.author %></span>
-            <div class="card small col s6">
+            <div class="card small col s6 option1">
               <p><%= question.firstoption %></p>
             </div>
-            <div class="card small col s6">
+            <div class="card small col s6 option2">
               <p><%=  question.secondoption %></p>
             </div>
           </div>
@@ -19,7 +19,7 @@
       </div>
       <%= link_to "Delete", question_path(question),
                          :data => {:confirm => "You sure?",
-                                   :method => "delete"} %>
+                                   :method => "delete"}, remote: true %>
     </div>
   </div>
 </div>
