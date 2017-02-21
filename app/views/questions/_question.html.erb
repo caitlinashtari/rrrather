@@ -5,12 +5,18 @@
         <div class="row">
           <div class="col s12 titleRow">
             <span class="card-title"><%= question.author %></span>
-            <div class="card small col s6 option1">
-              <p><%= question.firstoption %></p>
-            </div>
-            <div class="card small col s6 option2">
-              <p><%=  question.secondoption %></p>
-            </div>
+
+              <div class="card small col s6 option1">
+                <%=  render 'votes/form', question: question, selection: 'option1'%>
+                <p><%= question.firstoption %></p>
+                <p class="vote-results-<%= question.id %>"></p>
+              </div>
+
+              <div class="card small col s6 option2">
+                <%= render 'votes/form', question: question, selection: 'option2'%>
+                <p><%=  question.secondoption %></p>
+                <p class="vote-results-<%= question.id %>"></p>
+              </div>
           </div>
           <!-- <div class="col s6">
             <p>comments</p>

@@ -1,0 +1,4 @@
+<%= form_for [question, Vote.new], remote: true do |f| %>
+  <%= f.hidden_field :selection, :value => selection %>
+  <%= f.submit "Vote"%>
+<% end %>
