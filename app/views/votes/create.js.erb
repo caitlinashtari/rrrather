@@ -1,3 +1,5 @@
 $(function() {
-  $(".vote-results-<%= @vote.question.id %>").html("<%= Vote.where(question_id: @vote.question.id).group(:selection).count %>");
+  $(".option1-vote-results-<%= @vote.question_id %>").html("<%= Vote.where(question_id: @vote.question.id, selection: 'option1').count %>");
+  $(".option2-vote-results-<%= @vote.question_id %>").html("<%= Vote.where(question_id: @vote.question.id, selection: 'option2').count %>");
+  $('#vote').disabled()
 })
